@@ -1,14 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: com.acme.QuarkusGraphQLServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.905 s <<< FAILURE! - in com.acme.QuarkusGraphQLServiceTest
-testHelloEndpoint  Time elapsed: 0.01 s  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.616 s <<< FAILURE! - in com.acme.QuarkusGraphQLServiceTest
+testHelloEndpoint  Time elapsed: 0.009 s  <<< ERROR!
 java.lang.RuntimeException: 
 java.lang.RuntimeException: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
-	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: javax.enterprise.inject.spi.DeploymentException: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: javax.enterprise.inject.spi.DeploymentException: Found 2 deployment problems: 
+[1] Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	- java member: com.acme.JednostkaService#em
+	- declared on CLASS bean [types=[com.acme.JednostkaService, java.lang.Object], qualifiers=[@Default, @Any], target=com.acme.JednostkaService]
+[2] Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
 	- java member: com.acme.GeoHierarchyService#em
 	- declared on CLASS bean [types=[java.lang.Object, com.acme.GeoHierarchyService], qualifiers=[@Default, @Any], target=com.acme.GeoHierarchyService]
-	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1021)
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1029)
 	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:241)
 	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:127)
 	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:411)
@@ -24,20 +28,31 @@ java.lang.RuntimeException: io.quarkus.builder.BuildException: Build failure: Bu
 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1452)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
-Caused by: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	Suppressed: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	- java member: com.acme.JednostkaService#em
+	- declared on CLASS bean [types=[com.acme.JednostkaService, java.lang.Object], qualifiers=[@Default, @Any], target=com.acme.JednostkaService]
+		at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
+		at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
+		at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
+		... 14 more
+	Suppressed: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
 	- java member: com.acme.GeoHierarchyService#em
 	- declared on CLASS bean [types=[java.lang.Object, com.acme.GeoHierarchyService], qualifiers=[@Default, @Any], target=com.acme.GeoHierarchyService]
-	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
-	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
-	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
-	... 14 more
+		at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
+		at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
+		at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
+		... 14 more
 
 Caused by: java.lang.RuntimeException: 
 io.quarkus.builder.BuildException: Build failure: Build failed due to errors
-	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: javax.enterprise.inject.spi.DeploymentException: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: javax.enterprise.inject.spi.DeploymentException: Found 2 deployment problems: 
+[1] Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	- java member: com.acme.JednostkaService#em
+	- declared on CLASS bean [types=[com.acme.JednostkaService, java.lang.Object], qualifiers=[@Default, @Any], target=com.acme.JednostkaService]
+[2] Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
 	- java member: com.acme.GeoHierarchyService#em
 	- declared on CLASS bean [types=[java.lang.Object, com.acme.GeoHierarchyService], qualifiers=[@Default, @Any], target=com.acme.GeoHierarchyService]
-	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1021)
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1029)
 	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:241)
 	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:127)
 	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:411)
@@ -53,20 +68,31 @@ io.quarkus.builder.BuildException: Build failure: Build failed due to errors
 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1452)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
-Caused by: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	Suppressed: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	- java member: com.acme.JednostkaService#em
+	- declared on CLASS bean [types=[com.acme.JednostkaService, java.lang.Object], qualifiers=[@Default, @Any], target=com.acme.JednostkaService]
+		at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
+		at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
+		at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
+		... 14 more
+	Suppressed: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
 	- java member: com.acme.GeoHierarchyService#em
 	- declared on CLASS bean [types=[java.lang.Object, com.acme.GeoHierarchyService], qualifiers=[@Default, @Any], target=com.acme.GeoHierarchyService]
-	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
-	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
-	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
-	... 14 more
+		at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
+		at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
+		at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
+		... 14 more
 
 Caused by: io.quarkus.builder.BuildException: 
 Build failure: Build failed due to errors
-	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: javax.enterprise.inject.spi.DeploymentException: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: javax.enterprise.inject.spi.DeploymentException: Found 2 deployment problems: 
+[1] Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	- java member: com.acme.JednostkaService#em
+	- declared on CLASS bean [types=[com.acme.JednostkaService, java.lang.Object], qualifiers=[@Default, @Any], target=com.acme.JednostkaService]
+[2] Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
 	- java member: com.acme.GeoHierarchyService#em
 	- declared on CLASS bean [types=[java.lang.Object, com.acme.GeoHierarchyService], qualifiers=[@Default, @Any], target=com.acme.GeoHierarchyService]
-	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1021)
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1029)
 	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:241)
 	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:127)
 	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:411)
@@ -82,20 +108,27 @@ Build failure: Build failed due to errors
 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1452)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
-Caused by: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	Suppressed: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	- java member: com.acme.JednostkaService#em
+	- declared on CLASS bean [types=[com.acme.JednostkaService, java.lang.Object], qualifiers=[@Default, @Any], target=com.acme.JednostkaService]
+		at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
+		at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
+		at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
+		... 14 more
+	Suppressed: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
 	- java member: com.acme.GeoHierarchyService#em
 	- declared on CLASS bean [types=[java.lang.Object, com.acme.GeoHierarchyService], qualifiers=[@Default, @Any], target=com.acme.GeoHierarchyService]
-	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
-	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
-	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
-	... 14 more
+		at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:504)
+		at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:363)
+		at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:233)
+		... 14 more
 
 Caused by: javax.enterprise.inject.spi.DeploymentException: 
-javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
-	- java member: com.acme.GeoHierarchyService#em
-	- declared on CLASS bean [types=[java.lang.Object, com.acme.GeoHierarchyService], qualifiers=[@Default, @Any], target=com.acme.GeoHierarchyService]
-Caused by: javax.enterprise.inject.UnsatisfiedResolutionException: 
-Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+Found 2 deployment problems: 
+[1] Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
+	- java member: com.acme.JednostkaService#em
+	- declared on CLASS bean [types=[com.acme.JednostkaService, java.lang.Object], qualifiers=[@Default, @Any], target=com.acme.JednostkaService]
+[2] Unsatisfied dependency for type javax.persistence.EntityManager and qualifiers [@Default]
 	- java member: com.acme.GeoHierarchyService#em
 	- declared on CLASS bean [types=[java.lang.Object, com.acme.GeoHierarchyService], qualifiers=[@Default, @Any], target=com.acme.GeoHierarchyService]
 
