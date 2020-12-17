@@ -1,3 +1,2 @@
-META-INF/panache-archive.marker
 com/acme/NativeQuarkusGraphQLServiceIT.class
 com/acme/QuarkusGraphQLServiceTest.class

@@ -4,16 +4,15 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
-
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Table(name = "jednostki_ratownictwa_medycznego")
 @Entity
-public class Jednostka extends PanacheEntity{
+public class Jednostka{
 
-@Column(unique = true)    
-public Integer Lp;
+@Id
+public int Id;
 @Column(length = 200, unique = false)
 public String Nazwa_jednostki;
 @Column(length = 14, unique = false)

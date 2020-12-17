@@ -12,8 +12,8 @@ public class JednostkaService {
 @PersistenceContext(name = "GeoPC")
 EntityManager em;
 
-public Jednostka getJednostka(Long id){
-    return em.find(Jednostka.class, id);
+public Jednostka getJednostka(int Id){
+    return em.find(Jednostka.class, Id);
 }
 
 public List<Jednostka> getAllJednostka(){

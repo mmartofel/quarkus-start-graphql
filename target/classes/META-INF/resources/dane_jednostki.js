@@ -10,7 +10,7 @@ $(document).ready(function() {
         url: "/graphql",
         contentType: "application/json",
         type:'POST',
-        data: JSON.stringify({ query:'{jednostka(id:' + id + '){Nazwa_jednostki Ulica, Numer_budynku Numer_lokalu Kod_pocztowy Miejscowosc Telefon_kontaktowy Adres_email Rodzaj_ratownictwa}}' }),
+        data: JSON.stringify({ query:'{jednostka(Id:' + id + '){Nazwa_jednostki Ulica, Numer_budynku Numer_lokalu Kod_pocztowy Miejscowosc Telefon_kontaktowy Adres_email Rodzaj_ratownictwa}}' }),
         success: function(result) {
             console.log(JSON.stringify(result))
                 $( "#dane-jednostki" ).append("<h1>" + result.data.jednostka.Nazwa_jednostki + "</h1><br>" +

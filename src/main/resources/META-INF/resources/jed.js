@@ -15,11 +15,11 @@ $(document).ready(function() {
         url: "/graphql",
         contentType: "application/json",
         type:'POST',
-        data: JSON.stringify({ query:'{selectedJednostka(w:' + wojewodztwo + ',p:'+ powiat +',g:'+ gmina +'){id Nazwa_jednostki}}' }),
+        data: JSON.stringify({ query:'{selectedJednostka(w:' + wojewodztwo + ',p:'+ powiat +',g:'+ gmina +'){Id Nazwa_jednostki}}' }),
         success: function(result) {
             console.log(JSON.stringify(result))
             $.each(result.data.selectedJednostka, function(index, el) {
-                $( "#nazwa-jednostki" ).append("<ion-item href=/dane_jednostki.html?id=" + result.data.selectedJednostka[index].id + "> \
+                $( "#nazwa-jednostki" ).append("<ion-item href=/dane_jednostki.html?id=" + result.data.selectedJednostka[index].Id + "> \
                                               <ion-avatar slot=\"start\"><img src=\"/img/h.jpg\"></ion-avatar> \
                                               <ion-label>" + result.data.selectedJednostka[index].Nazwa_jednostki + "</ion-label></ion-item>");
             });

@@ -1,4 +1,6 @@
 com/acme/GeoHierarchyService.class
+com/acme/JednostkaService.class
 com/acme/GeoHierarchyAPI.class
-META-INF/panache-archive.marker
+com/acme/JednostkaAPI.class
+com/acme/Jednostka.class
 com/acme/GeoHierarchy.class

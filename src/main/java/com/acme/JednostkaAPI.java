@@ -17,8 +17,8 @@ public List<Jednostka> getAllJednostka(){
 }
 
 @Query
-public Jednostka getJednostka(Long id){
-    return service.getJednostka(id);
+public Jednostka getJednostka(int Id){
+    return service.getJednostka(Id);
 }
 
 @Query
