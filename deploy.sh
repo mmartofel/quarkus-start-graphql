@@ -1,4 +1,4 @@
- mvn package
+ mvn clean install -Dquarkus.profile=dev
  git add .
  git commit -m $1
  git push origin main
