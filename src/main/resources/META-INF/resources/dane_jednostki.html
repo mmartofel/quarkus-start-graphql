@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Państwowe Ratownictwo Medyczne</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRB1czAWM3TzMOKrgbc6SxSe4ZvYWaEw&callback=initMap&libraries=&v=weekly"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRB1czAWM3TzMOKrgbc6SxSe4ZvYWaEw&callback=initMap&libraries=places&v=weekly"></script>
+    <script src="./dane_jednostki.js"></script>
+</head>
+
+<body>
+
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Jednostki ratownictwa</ion-title>
+                <ion-buttons slot="start">
+                    <ion-button onclick="goBack()">
+                      <ion-icon name="arrow-back-circle-outline" slot="icon-only"></ion-icon>
+                    </ion-button>
+                    <ion-back-button></ion-back-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+        <ion-footer>
+            <ion-toolbar>
+              <ion-title>Państwowe Ratownictwo Medyczne</ion-title>
+            </ion-toolbar>
+          </ion-footer>
+        <ion-content>
+            <ion-grid> 
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>Dane jednostki</ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content id="dane-jednostki">
+                                <!--  Generated list of jednostka goes here -->
+                             </ion-card-content>
+                        </ion-card>     
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>Zakres działania jednostki</ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content id="zakres-jednostki">
+                                <!--  Generated list of jednostka goes here -->
+                             </ion-card-content>
+                        </ion-card>
+                        <ion-card>
+                            <!--The div element for the map -->
+                            <div id="map">mapa</div>     
+                        </ion-card> 
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-content>  
+    </ion-app>
+    
+    <script>
+        function goBack() {
+          window.history.back();
+        }
+    </script>     
+
+    <style type="text/css">
+    /* Set the size of the div element that contains the map */
+        #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+        }   
+    </style>
+
+</body>
+</html>

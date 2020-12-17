@@ -17,7 +17,12 @@ public List<Jednostka> getAllJednostka(){
 }
 
 @Query
-public List<String> getSelectedJednostka(String w, String p, String g){
+public Jednostka getJednostka(Long id){
+    return service.getJednostka(id);
+}
+
+@Query
+public List<Jednostka> getSelectedJednostka(String w, String p, String g){
     return service.getSelectedJednostka(w, p, g);
 }
 
