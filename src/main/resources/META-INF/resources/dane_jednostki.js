@@ -5,6 +5,7 @@ $(document).ready(function() {
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('id');
     console.log(id);
+    var map = new ol.Map();
 
     $.ajax({
         url: "/graphql",
@@ -23,41 +24,26 @@ $(document).ready(function() {
                 );
         }
     })
-    
-    let map;
-    let service;
-    let infowindow;
-    let qry;
 
     function initMap() {
-      const glowno = new google.maps.LatLng(51.9661, 19.7178);
-      infowindow = new google.maps.InfoWindow();
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: glowno,
-        zoom: 14,
-      });
+    var mapCenter = [19.7178, 51.9661];
+    var mapCenterWebMercator = ol.proj.fromLonLat(mapCenter);
 
-      qry = "ochotnicza straz pozarna";
-
-      console.log(qry);
-
-      const request = {
-        query: qry,
-        fields: ["name", "geometry"],
-      };
-      service = new google.maps.places.PlacesService(map);
-      service.findPlaceFromQuery(request, (results, status) => {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (let i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-          }
-          map.setCenter(results[0].geometry.location);
-        }
-      });
-    }
-
-    jQuery(document).ready(function($) {
-        initMap();
+    var map = new ol.Map({
+      target: document.getElementById("mapElement"),
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      view: new ol.View({
+        center: mapCenterWebMercator,
+        zoom: 14
+      })
     });
+        map.renderSync();
+    };
+
+    initMap();
 
 });

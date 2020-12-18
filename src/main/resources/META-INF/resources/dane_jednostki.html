@@ -9,9 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRB1czAWM3TzMOKrgbc6SxSe4ZvYWaEw&callback=initMap&libraries=&v=weekly"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRB1czAWM3TzMOKrgbc6SxSe4ZvYWaEw&callback=initMap&libraries=places&v=weekly"></script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
+
     <script src="./dane_jednostki.js"></script>
 </head>
 
@@ -55,8 +56,10 @@
                              </ion-card-content>
                         </ion-card>
                         <ion-card>
+                            <ion-card-content>
                             <!--The div element for the map -->
-                            <div id="map">mapa</div>     
+                                <div id="mapElement" class="map"></div>
+                            </ion-card-content>
                         </ion-card> 
                     </ion-col>
                 </ion-row>
@@ -71,12 +74,9 @@
     </script>     
 
     <style type="text/css">
-    /* Set the size of the div element that contains the map */
-        #map {
+        .map {
         height: 400px;
-        /* The height is 400 pixels */
         width: 100%;
-        /* The width is the width of the web page */
         }   
     </style>
 
