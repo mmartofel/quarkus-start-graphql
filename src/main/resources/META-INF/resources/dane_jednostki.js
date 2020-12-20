@@ -22,6 +22,10 @@ $(document).ready(function() {
                 );
                 $( "#zakres-jednostki" ).append("<h2>" + result.data.jednostka.Rodzaj_ratownictwa + "<\h2>"
                 );
+                var mapLink = document.getElementById("mapLink");
+                mapLink.href = "/map.html?search_for=" + result.data.jednostka.Nazwa_jednostki + "";            
         }
     })
+
+    
 });
