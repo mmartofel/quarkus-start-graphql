@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.acme.QuarkusGraphQLServiceTest" time="7.751" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.acme.QuarkusGraphQLServiceTest" time="7.85" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PL"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk@11/11.0.8/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/mmartofe/projects/nfz/quarkus-start-graphql/target/surefire/surefirebooter12021038920161325922.jar /Users/mmartofe/projects/nfz/quarkus-start-graphql/target/surefire 2020-12-18T15-17-03_501-jvmRun1 surefire6884960467041362540tmp surefire_012399860561442603503tmp"/>
+    <property name="sun.java.command" value="/Users/mmartofe/projects/nfz/quarkus-start-graphql/target/surefire/surefirebooter17283504901174011394.jar /Users/mmartofe/projects/nfz/quarkus-start-graphql/target/surefire 2020-12-20T17-40-25_220-jvmRun1 surefire1783270126395251312tmp surefire_02751199669985041868tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="maven.home" value="/Users/mmartofe/tools/apache-maven-3.6.3"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/mmartofe/projects/nfz/quarkus-start-graphql/target/surefire/surefirebooter12021038920161325922.jar"/>
+    <property name="surefire.real.class.path" value="/Users/mmartofe/projects/nfz/quarkus-start-graphql/target/surefire/surefirebooter17283504901174011394.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="11.0.8+11"/>
@@ -62,5 +62,5 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testHelloEndpoint" classname="com.acme.QuarkusGraphQLServiceTest" time="0.99"/>
+  <testcase name="testHelloEndpoint" classname="com.acme.QuarkusGraphQLServiceTest" time="1.023"/>
 </testsuite>
