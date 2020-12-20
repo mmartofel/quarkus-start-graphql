@@ -24,26 +24,4 @@ $(document).ready(function() {
                 );
         }
     })
-
-    function initMap() {
-    var mapCenter = [19.7178, 51.9661];
-    var mapCenterWebMercator = ol.proj.fromLonLat(mapCenter);
-
-    var map = new ol.Map({
-      target: document.getElementById("mapElement"),
-      layers: [
-        new ol.layer.Tile({
-          source: new ol.source.OSM()
-        })
-      ],
-      view: new ol.View({
-        center: mapCenterWebMercator,
-        zoom: 14
-      })
-    });
-        map.renderSync();
-    };
-
-    initMap();
-
 });
