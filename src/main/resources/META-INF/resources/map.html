@@ -7,9 +7,14 @@
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=""></script>
-    
+            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
     <!-- Ionic CSS -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/> -->
+    
+    <script src="./map.js"></script>
 
 </head>
 
@@ -18,23 +23,9 @@
  <div id="mapid" class="map"></div>
 
     <style>
-        #mapid { height: 100%; width: 100%;}
+        #mapid {height: 100%; width: 100%;}
     </style>
     
-    <script>
-    
-        var map = L.map('mapid').setView([51.505, -0.09], 16);
-    
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-    
-        L.marker([51.505, -0.09]).addTo(map)
-            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-            .openPopup();
-    
-    </script>
-
 </body>
 
 </html>

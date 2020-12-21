@@ -26,6 +26,5 @@ $(document).ready(function() {
                 mapLink.href = "/map.html?search_for=" + result.data.jednostka.Nazwa_jednostki + "";            
         }
     })
-
     
 });
