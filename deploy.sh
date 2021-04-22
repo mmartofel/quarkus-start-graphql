@@ -12,7 +12,8 @@ COMMIT_COMMENT='Configuration change done at: '`date`
  
 # Create Postgres instance 
  oc delete deployment/ratownictwo-prod
- ./postgres/create_postgres_instance.sh pg.env ratownictwo-prod
+ oc delete service/ratownictwo-prod
+ ./postgres/create_postgres_instance.sh ./postgres/pg.env ratownictwo-prod
 
  # Create application service
  oc delete svc/quarkus-start-graphql
