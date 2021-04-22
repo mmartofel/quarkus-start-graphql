@@ -29,7 +29,7 @@ public List<GeoHierarchy> getAllGeo(){
 
 @Query
 public List<String> getAllWojewodztwo(){
-    LOG.info("First page of an app hit by new user :-) ");
+    LOG.info("List of WOJEWODZTWO requested");
     return service.getAllWojewodztwo();
 }
 
